@@ -1,0 +1,2314 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: #0a0a0a;
+}
+body {
+    font-family: 'BBH Sans Bogle', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #0a0a0a;
+}
+
+/* Header */
+:root {
+    --header-height: 80px;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #0a0a0a;
+    z-index: 1000;
+    padding: 1rem 0;
+    height: var(--header-height);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h2 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 100;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.burger-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.burger-line {
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 6rem 0 2rem 0;
+    background-color: #0a0a0a;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+/* Add scroll margin to sections */
+section {
+    scroll-margin-top: var(--header-height);
+}
+
+/* Left Column Styles */
+.hero-left {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.hero-headline {
+    font-size: 3.5rem;
+    font-weight: 100;
+    color: #ffffff;
+    line-height: 1.2;
+    text-align: left;
+    margin-bottom: 2rem;
+    min-height: calc(3.5rem * 1.2 * 2);
+}
+
+.hero-graphic {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 0;
+}
+
+/* Brain Image */
+.brain-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.2));
+    margin-right: auto;
+    margin-left: -50px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Right Column Styles */
+.hero-right {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+/* Profile Image */
+.profile-image-container {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 1rem;
+    margin-left: 0;
+    margin-right: auto;
+    display: flex;
+
+}
+
+.profile-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 2px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Paragraph Text */
+.hero-text {
+    max-width: 500px;
+    margin-bottom: 1rem;
+    margin-left: 0;
+}
+
+.hero-text p {
+	/* use the fallback stack so metrics (weight/case) are controllable */
+	font-family: var(--hero-paragraph-font);
+	/* lightweight and adjustable */
+	font-weight: var(--hero-paragraph-weight);
+	/* ensure casing is controllable from CSS */
+	text-transform: var(--hero-paragraph-transform);
+	/* reset any font-variant caps from the display font */
+	font-variant-caps: normal;
+	/* prevent the browser from synthesizing bold/italic if the font lacks them */
+	font-synthesis: none;
+	/* avoid unexpected letter-spacing from the display font */
+	letter-spacing: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	/* preserve existing visual settings */
+	color: #ffffff;
+	font-size: 1.1rem;
+	line-height: 1.7;
+	text-align: left;
+	opacity: 0.88;
+    font-weight: 300;
+}
+
+/* Action Buttons */
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* From Uiverse.io by Cevorob */
+.btn-primary {
+    position: relative;
+    height: 50px;
+    padding: 0 30px;
+    border: 2px solid #000;
+    background: #e8e8e8;
+    user-select: none;
+    white-space: nowrap;
+    transition: all .05s linear;
+    font-family: inherit;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-primary:before, .btn-primary:after {
+    content: "";
+    position: absolute;
+    background: #e8e8e8;
+    transition: all .2s linear;
+}
+
+.btn-primary:before {
+    width: calc(100% + 6px);
+    height: calc(100% - 16px);
+    top: 8px;
+    left: -3px;
+}
+
+.btn-primary:after {
+    width: calc(100% - 16px);
+    height: calc(100% + 6px);
+    top: -3px;
+    left: 8px;
+}
+
+.btn-primary:hover {
+    cursor: crosshair;
+}
+
+.btn-primary:active {
+    transform: scale(0.95);
+}
+
+.btn-primary:hover:before {
+    height: calc(100% - 32px);
+    top: 16px;
+}
+
+.btn-primary:hover:after {
+    width: calc(100% - 32px);
+    left: 16px;
+}
+
+.btn-primary span {
+    font-size: 15px;
+    z-index: 3;
+    position: relative;
+    font-weight: 600;
+}
+
+/* Separator Line */
+.separator {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    margin-top: 1rem;
+}
+
+/* Controls for hero paragraph: change these to experiment */
+:root {
+	/* use Inter for all paragraphs */
+	--hero-paragraph-font: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+	/* numeric weight you want to use (100, 200, 300...) */
+	--hero-paragraph-weight: 100;
+	/* 'none' to keep original casing, 'lowercase' / 'uppercase' / 'capitalize' as needed */
+	--hero-paragraph-transform: none;
+}
+
+/* Ensure all paragraphs use Cal Sans so you can control metrics in CSS */
+p {
+	font-family: var(--hero-paragraph-font);
+}
+
+/* Features section: stacked two-column blocks with alternating sides */
+.features-section {
+    max-width: 1200px;
+    margin: 4rem auto; /* significant vertical spacing from other sections */
+    padding: 0 2rem;
+    display: block;
+}
+
+/* New container styles for features section */
+.features-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Box wrapper around the grid */
+.features-box {
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 0; /* remove padding to allow grid lines to touch edges */
+    overflow: hidden; /* ensure grid lines don't overflow rounded corners */
+    margin-top: 2rem;
+}
+
+/* Grid: 2 columns x 3 rows -> 6 parts (6-pack style) */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 1fr; /* equal height rows */
+    gap: 0; /* remove gap to allow border lines to touch */
+}
+
+/* Individual grid cells - make them smaller */
+.features-grid .feature-content,
+.features-grid .feature-graphic {
+    padding: 1.75rem;  /* reduced from 2.5rem */
+    position: relative;
+    border-right: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Remove right border from last column */
+.features-grid .feature-content:nth-child(2n),
+.features-grid .feature-graphic:nth-child(2n) {
+    border-right: none;
+}
+
+/* Remove bottom border from last row */
+.features-grid .feature-content:nth-last-child(-n+2),
+.features-grid .feature-graphic:nth-last-child(-n+2) {
+    border-bottom: none;
+}
+
+/* Content styling - adjust sizes and remove opacity */
+.feature-title {
+    font-size: 1.5rem;  /* slightly smaller */
+    font-weight: 400;
+    color: #ffffff;
+    min-height: calc(1.5rem * 1.2 * 1.4);
+    line-height: 1.2;
+}
+
+.feature-desc {
+    font-size: 0.95rem;
+    color: #ffffffab;
+    margin-bottom: 0.75rem;
+    max-width: 380px;  /* constrain width */
+}
+
+/* Make feature content a flex container with space between title/desc and list */
+.feature-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 1.75rem;
+    position: relative;
+    border-right: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Push title and description to top */
+.feature-title, .feature-desc {
+    flex: 0 0 auto;
+}
+
+/* Push list to bottom with auto margin top */
+.feature-list {
+    margin-top: auto;
+    padding: 0;
+}
+
+/* Make SVG graphics smaller */
+.svg-graphic {
+    width: 60%;  /* reduced from 80% */
+    max-width: 280px;  /* reduced from 360px */
+    height: auto;
+    filter: drop-shadow(0 8px 20px rgba(0,0,0,0.4));
+}
+
+/* Replace SVG graphic styles with image styles */
+.feature-image {
+    width: 60%;
+    max-width: 280px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 20px rgba(0,0,0,0.4));
+    margin: 0 auto;
+}
+
+/* Feature list items - remove opacity */
+.feature-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-top: 1.2rem;
+    color: #ffffff;
+    font-size: 0.9rem;  /* slightly smaller */
+}
+
+.feature-list .check {
+    font-family: 'Inter', sans-serif;
+}
+
+.feature-list .check::after {
+    border-color: #ffffff;  /* removed opacity */
+}
+
+/* Navigation Styles */
+.nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background: rgba(10, 10, 10, 0.95);
+    transition: 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-menu.active {
+    right: 0;
+}
+
+.nav-list {
+    list-style: none;
+    text-align: center;
+}
+
+.nav-list li {
+    margin: 2rem 0;
+}
+
+.nav-list a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: 0.3s;
+}
+
+.nav-list a:hover {
+    opacity: 0.7;
+}
+
+/* Burger Menu Animation */
+.burger-menu {
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.burger-menu.active .burger-line:first-child {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.burger-menu.active .burger-line:last-child {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media (min-width: 769px) {
+    .nav-menu {
+        position: static;
+        width: auto;
+        height: auto;
+        background: none;
+    }
+
+    .nav-list {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .nav-list li {
+        margin: 0;
+    }
+
+    .nav-list a {
+        font-size: 1rem;
+    }
+
+    .burger-menu {
+        display: none;
+    }
+
+    .hero-container { 
+        gap: 2.5rem; 
+    }
+    .hero-left { 
+        gap: 2rem; 
+    }
+    .hero-right { 
+        gap: 1.5rem; 
+    }
+    .hero-headline{
+        padding-bottom: 0;
+    }
+    .hero-left{
+        gap:0;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        padding: 2rem;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+
+/* Responsive: stack into single column on small screens */
+@media (max-width: 880px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .features-grid .feature-content,
+    .features-grid .feature-graphic {
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    /* Only remove bottom border from very last cell */
+    .features-grid .feature-content:last-child,
+    .features-grid .feature-graphic:last-child {
+        border-bottom: none;
+    }
+}
+
+/* Ensure left-aligned text for desktop as requested in blocks */
+@media (min-width: 881px) {
+    .feature-content { text-align: left; }
+    .feature-block.reverse .feature-content { text-align: left; }
+}
+
+/* Responsive: stack into single column (6 parts stacked) on small screens */
+@media (max-width: 880px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem 0;
+    }
+
+    .features-grid .feature-content,
+    .features-grid .feature-graphic {
+        text-align: center;
+    }
+
+    .features-grid .feature-graphic { margin-top: 0.5rem; }
+}
+
+/* Visual checkbox */
+.feature-list .check {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    border-radius: 50%; /* make it round */
+    background: transparent;
+    border: 0px solid rgba(255,255,255,0.9); /* remove border */
+    position: relative;
+}
+
+/* outer square box around the circular check */
+.feature-list .check::before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    /* draw only small corner brackets */
+    background:
+      linear-gradient(rgba(255,255,255,0.45), rgba(255,255,255,0.45)) top left,
+      linear-gradient(rgba(255,255,255,0.45), rgba(255,255,255,0.45)) top left,
+      linear-gradient(rgba(255,255,255,0.45), rgba(255,255,255,0.45)) top right,
+      linear-gradient(rgba(255,255,255,0.45), rgba(255,255,255,0.45)) top right,
+      linear-gradient(rgba(255,255,255,0.45), rgba(255,255,255,0.45)) bottom left,
+      linear-gradient(rgba(255,255,255,0.45), rgba(255,255,255,0.45)) bottom left,
+      linear-gradient(rgba(255,255,255,0.45), rgba(255,255,255,0.45)) bottom right,
+      linear-gradient(rgba(255,255,255,0.45), rgba(255,255,255,0.45)) bottom right;
+    background-size: 6px 1px, 1px 6px, 6px 1px, 1px 6px, 6px 1px, 1px 6px, 6px 1px, 1px 6px;
+    background-repeat: no-repeat;
+}
+
+/* checkmark using pseudo element */
+.feature-list .check::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 6px;
+    height: 10px;
+    border: solid rgba(255,255,255,0.95);
+    border-width: 0 2px 2px 0;
+    transform: translate(-50%, -50%) rotate(45deg);
+    opacity: 0.95;
+}
+
+/* Make sure list text sits nicely */
+.feature-list li span:last-child {
+    display: inline-block;
+    line-height: 1.4;
+    font-family: var(--hero-paragraph-font);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - THREE BREAKPOINTS
+   768px: Tablet/Mobile transition
+   600px: Mobile optimization
+   480px: Small mobile devices
+   ============================================ */
+
+/* BREAKPOINT 1: Tablet/Mobile (768px and below) */
+@media (max-width: 768px) {
+    .header-container {
+        padding: 0 1rem;
+    }
+    
+    .logo h2 {
+        font-size: 1.3rem;
+    }
+    
+    .burger-menu {
+        padding: 6px;
+    }
+    
+    .burger-line {
+        width: 22px;
+        height: 2.5px;
+    }
+    
+    /* Reduce burger menu link spacing */
+    .nav-list li {
+        margin-bottom: 1rem;
+    }
+    
+    .hero {
+        padding: 5rem 0 2rem 0;
+    }
+    
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    /* Rearrange: brain & profile side-by-side, paragraph below */
+    .hero-left {
+        order: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .hero-headline {
+        order: 1;
+        margin-bottom: 0;
+    }
+    
+    .hero-graphic {
+        order: 2;
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    
+    .hero-right {
+        order: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .profile-image-container {
+        order: 1;
+        margin: 0;
+        position: relative;
+        top: 0;
+    }
+    
+    .hero-text {
+        order: 2;
+        text-align: left;
+        max-width: 100%;
+    }
+    
+    .hero-actions {
+        order: 3;
+        justify-content: flex-start;
+    }
+    
+    .separator {
+        order: 4;
+    }
+    
+    /* Move profile to be next to brain */
+    .hero-graphic::after {
+        content: '';
+        display: none;
+    }
+    
+    .hero-headline {
+        font-size: 2.5rem;
+        text-align: center;
+        min-height: auto;
+        margin-bottom: 0;
+    }
+    
+    .hero-graphic {
+        height: 300px;
+    }
+    
+    .brain-image {
+        max-width: 350px;
+        margin-left: 0;
+        margin-right: auto;
+    }
+    
+    .hero-graphic {
+        justify-content: flex-start;
+        height: auto;
+        min-height: 200px;
+    }
+    
+    .profile-image-container {
+        width: 200px;
+        height: 200px;
+        flex-shrink: 0;
+    }
+    
+    .profile-image {
+        width: 100%;
+        height: 100%;
+    }
+    
+    /* Features/About section - keep 2 columns but smaller */
+    .features-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+    }
+    
+    .feature-content,
+    .feature-graphic {
+        padding: 1.25rem;
+        text-align: left;
+    }
+    
+    /* 1st card (Bug Bounty) - left aligned */
+    .feature-content:nth-child(1) {
+        text-align: left;
+    }
+    
+    /* 2nd text card (AI Research) - right aligned */
+    .feature-content:nth-child(4) {
+        text-align: right;
+    }
+    
+    /* 2nd text card list items - right aligned */
+    .feature-content:nth-child(4) .feature-list li {
+        justify-content: flex-end;
+        flex-direction: row-reverse;
+        gap: 0.75rem;
+    }
+    
+    .feature-content:nth-child(4) .feature-list li span:last-child {
+        text-align: right;
+        flex: 0 1 auto;
+    }
+    
+    /* 3rd card (Entrepreneur) - left aligned */
+    .feature-content:nth-child(5) {
+        text-align: left;
+    }
+    
+    .feature-title {
+        font-size: 1.2rem;
+        min-height: calc(1.2rem * 1.2 * 1.4);
+    }
+    
+    .feature-desc {
+        font-size: 0.85rem;
+        max-width: 100%;
+    }
+    
+    .feature-list {
+        font-size: 0.8rem;
+    }
+    
+    .feature-list li {
+        margin-top: 0.9rem;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    
+    .feature-image {
+        width: 50%;
+        max-width: 180px;
+    }
+    
+    .check {
+        width: 14px;
+        height: 14px;
+    }
+    
+    .check::after {
+        width: 5px;
+        height: 8px;
+    }
+
+    /* Technologies section */
+    .technologies-section {
+        padding: 4rem 0;
+    }
+    
+    .section-headline {
+        font-size: 2.5rem;
+        min-height: calc(2.5rem * 1.2 * 2);
+    }
+    
+    /* Courses section */
+    .courses-section {
+        padding: 4rem 0;
+    }
+    
+    .courses-grid {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 1rem;
+    }
+    
+    .course-card {
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    .course-icon {
+        flex-shrink: 0;
+        width: 60px;
+        height: 60px;
+    }
+    
+    .course-icon img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .course-info {
+        text-align: left;
+        flex: 1;
+    }
+    
+    .course-info h3 {
+        font-size: 1rem;
+        margin-bottom: 0.25rem;
+    }
+    
+    .course-info p {
+        font-size: 0.85rem;
+    }
+    
+    /* Projects section */
+    .projects-section {
+        padding: 3rem 0;
+    }
+    
+    .project-caption-content {
+        height: auto;
+        min-height: 140px;
+    }
+    
+    /* Footer */
+    .footer-copyright {
+        font-size: 3rem;
+        letter-spacing: 8px;
+    }
+    
+    /* Reduce container padding for better use of screen width */
+    .hero-container,
+    .features-section,
+    .features-container,
+    .technologies-container,
+    .courses-container,
+    .education-container,
+    .projects-container,
+    .footer-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    /* Education section - single column */
+    .education-timeline {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    
+    .education-card,
+    .education-card:nth-child(odd),
+    .education-card:nth-child(even) {
+        grid-column: 1;
+        padding: 0;
+    }
+    
+    .education-year {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 1rem;
+        transform: none;
+        left: auto;
+        right: auto;
+    }
+    
+    .education-card-inner {
+        grid-template-columns: 120px 1fr;
+        gap: 1rem;
+    }
+    
+    /* Projects section - single column */
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-card {
+        border-right: none !important;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        min-height: 300px;
+    }
+    
+    .project-card:last-child {
+        border-bottom: none;
+    }
+    
+    .project-header {
+        padding: 1.5rem 1rem;
+    }
+}
+
+/* BREAKPOINT 2: Mobile Optimization (600px and below) */
+@media (max-width: 600px) {
+    /* Further reduce padding for maximum width usage */
+    .hero-container,
+    .features-section,
+    .features-container,
+    .technologies-container,
+    .courses-container,
+    .education-container,
+    .projects-container,
+    .footer-container {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+    
+    .header-container {
+        padding: 0 0.75rem;
+    }
+    
+    /* Hero adjustments */
+    .hero-headline {
+        font-size: 2.2rem;
+        min-height: auto;
+    }
+    
+    .hero-left {
+        gap: 0.5rem;
+    }
+    
+    .hero-graphic {
+        gap: 1rem;
+    }
+    
+    .profile-image-container {
+        width: 180px;
+        height: 180px;
+    }
+    
+    /* Features section - maintain 2 columns but tighter */
+    .features-grid {
+        gap: 0;
+    }
+    
+    .feature-content,
+    .feature-graphic {
+        padding: 1rem;
+    }
+    
+    .feature-title {
+        font-size: 1.1rem;
+        min-height: auto;
+    }
+    
+    .feature-desc {
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .feature-list {
+        font-size: 0.75rem;
+    }
+    
+    .feature-list li {
+        margin-top: 0.7rem;
+    }
+    
+    .feature-image {
+        width: 45%;
+        max-width: 150px;
+    }
+    
+    /* Technologies section */
+    .section-headline {
+        font-size: 2rem;
+        min-height: auto;
+    }
+    
+    .tech-slider {
+        padding: 0.5rem;
+    }
+    
+    .tech-card {
+        min-width: 200px;
+        padding: 1.25rem;
+    }
+    
+    .tech-icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    /* Courses section - switch to single column */
+    .courses-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .course-card {
+        padding: 0.875rem;
+    }
+    
+    .course-icon {
+        width: 30%;
+    }
+    
+    .course-icon img {
+        max-height: 70px;
+    }
+    
+    .course-info h3 {
+        font-size: 0.95rem;
+    }
+    
+    .course-info p {
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .badge {
+        font-size: 0.75rem;
+        padding: 0.2rem 0.75rem;
+    }
+    
+    /* Education section - stack image on top */
+    .education-timeline {
+        gap: 2.5rem;
+    }
+    
+    .education-year {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.6rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .education-card-inner {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+        gap: 0;
+    }
+    
+    .education-media {
+        min-height: 200px;
+        width: 100%;
+    }
+    
+    .education-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .education-content {
+        border-left: none;
+        border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    
+    .education-title {
+        font-size: 1rem;
+    }
+    
+    .education-program,
+    .education-location {
+        font-size: 0.85rem;
+    }
+    
+    /* Projects section */
+    .project-caption {
+        font-size: 1.1rem;
+    }
+    
+    .project-subtitle {
+        font-size: 0.85rem;
+    }
+    
+    .project-caption-content {
+        padding: 1.25rem;
+    }
+    
+    /* Footer */
+    .footer-copyright {
+        font-size: 2.5rem;
+        letter-spacing: 6px;
+    }
+}
+
+/* BREAKPOINT 3: Small Mobile Devices (480px and below) */
+@media (max-width: 480px) {
+    /* Maximum width usage with minimal padding */
+    .header-container {
+        padding: 0 0.5rem;
+    }
+    
+    .hero-container,
+    .features-section,
+    .features-container,
+    .technologies-container,
+    .courses-container,
+    .education-container,
+    .projects-container,
+    .footer-container {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    
+    .logo h2 {
+        font-size: 1.1rem;
+    }
+    
+    .burger-line {
+        width: 20px;
+        height: 2px;
+    }
+    
+    /* Hero section - compact */
+    .hero {
+        padding: 4.5rem 0 1rem 0;
+    }
+    
+    .hero-headline {
+        font-size: 1.8rem;
+        min-height: auto;
+        margin-top: 1.2rem;
+    }
+    
+    .hero-graphic {
+        height: auto;
+        min-height: 200px;
+        justify-content: center;
+    }
+    
+    .brain-image {
+        max-width: 280px;
+        margin-left: 0;
+    }
+    
+    .profile-image-container {
+        width: 160px;
+        height: 160px;
+    }
+    
+    .btn-primary {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    /* Section spacing - compact */
+    .features-section,
+    .technologies-section,
+    .courses-section,
+    .education-section,
+    .projects-section {
+        padding: 2.5rem 0;
+    }
+    
+    .section-headline {
+        font-size: 1.6rem;
+        min-height: auto;
+        margin-bottom: 2rem;
+    }
+    
+    .section-tag {
+        font-size: 0.75rem;
+    }
+    
+    /* Features - single column for very small screens */
+    .features-grid {
+        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .feature-content,
+    .feature-graphic {
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        padding: 1.25rem 0.75rem;
+    }
+    
+    .feature-content:last-child,
+    .feature-graphic:last-child {
+        border-bottom: none;
+    }
+    
+    /* Reorder items for single column */
+    .feature-content:nth-child(1) { order: 1; } /* Bug Bounty text */
+    .feature-graphic:nth-child(2) { order: 2; } /* Bug image */
+    .feature-graphic:nth-child(3) { order: 4; } /* Atom image - move after AI text */
+    .feature-content:nth-child(4) { order: 3; } /* AI Research text - move before atom */
+    .feature-content:nth-child(5) { order: 5; } /* Entrepreneur text */
+    .feature-graphic:nth-child(6) { order: 6; } /* Rocket image */
+    
+    .feature-title {
+        font-size: 1.2rem;
+        min-height: auto;
+    }
+    
+    .feature-desc {
+        font-size: 0.85rem;
+    }
+    
+    .feature-image {
+        max-width: 180px;
+    }
+    
+    /* Reset text alignment for single column */
+    .feature-content:nth-child(1),
+    .feature-content:nth-child(4),
+    .feature-content:nth-child(5) {
+        text-align: left;
+    }
+    
+    .feature-content:nth-child(4) .feature-list li {
+        justify-content: flex-start;
+        flex-direction: row;
+    }
+    
+    /* Technologies */
+    .tech-card {
+        min-width: 180px;
+        padding: 1.25rem;
+    }
+    
+    .tech-icon {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .tech-name {
+        font-size: 0.7rem;
+    }
+    
+    /* Courses - vertical layout */
+    .course-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+    
+    .course-icon {
+        width: 100%;
+        height: 70px;
+    }
+    
+    .course-icon img {
+        max-height: 60px;
+    }
+    
+    .course-info h3 {
+        font-size: 0.95rem;
+    }
+    
+    .course-info p {
+        font-size: 0.8rem;
+    }
+    
+    /* Education - maintain stacked layout, more compact */
+    .education-timeline {
+        gap: 2rem;
+    }
+    
+    .education-year {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .education-card-inner {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+        gap: 0;
+    }
+    
+    .education-media {
+        min-height: 180px;
+        width: 100%;
+    }
+    
+    .education-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .education-content {
+        border-left: none;
+        border-top: 1px solid rgba(255,255,255,0.08);
+        padding: 1rem 1.25rem;
+    }
+    
+    .education-title {
+        font-size: 0.95rem;
+    }
+    
+    .education-program,
+    .education-location {
+        font-size: 0.8rem;
+    }
+    
+    /* Projects */
+    .project-header {
+        padding: 1rem 0.75rem;
+    }
+    
+    .project-caption {
+        font-size: 1rem;
+    }
+    
+    .project-subtitle {
+        font-size: 0.85rem;
+    }
+    
+    .project-caption-content {
+        padding: 1.25rem 1.5rem;
+        min-height: 120px;
+    }
+    
+    /* Footer */
+    .footer {
+        padding: 2rem 0 1rem 0;
+    }
+    
+    .footer-container {
+        padding: 0 1rem;
+    }
+    
+    .footer-copyright {
+        font-size: 2rem;
+        letter-spacing: 4px;
+    }
+    
+    .footer-heading {
+        font-size: 1rem;
+    }
+    
+    .footer-link {
+        font-size: 0.85rem;
+    }
+}
+
+/* BREAKPOINT 4: Extra Small Mobile Devices (375px and below) */
+@media (max-width: 375px) {
+    /* Ensure AI Research checkbox items are properly aligned */
+    .feature-content:nth-child(4) .feature-list li {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: row;
+        gap: 0.75rem;
+        text-align: left;
+    }
+    
+    .feature-content:nth-child(4) .feature-list li span:last-child {
+        text-align: left;
+        flex: 1;
+        line-height: 1.4;
+    }
+    
+    /* Ensure all feature list items are properly aligned */
+    .feature-list li {
+        align-items: center;
+    }
+    
+    .feature-list .check {
+        flex-shrink: 0;
+        align-self: flex-start;
+        margin-top: 2px;
+    }
+    
+    /* Projects - Dynamic sizing to fit content */
+    .project-card {
+        height: auto !important;
+        min-height: auto !important;
+    }
+    
+    .project-caption-content {
+        height: auto !important;
+        min-height: auto !important;
+        padding: 1rem 1.25rem;
+    }
+    
+    .project-caption {
+        font-size: 0.95rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.3;
+    }
+    
+    .project-subtitle {
+        font-size: 0.8rem;
+        line-height: 1.5;
+    }
+    
+    .project-media {
+        min-height: 180px;
+    }
+}
+
+/* Technologies Section */
+.technologies-section {
+    padding: 6rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.technologies-container {
+    padding: 0 2rem;
+}
+
+.section-tag {
+    color: #ffffff;
+    font-size: 0.9rem;
+    opacity: 0.7;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.section-headline {
+    color: #ffffff;
+    font-size: 3rem;
+    font-weight: 300;
+    line-height: 1.2;
+    min-height: calc(3rem * 1.2 * 2);
+}
+.courses-section .section-headline{
+    margin-bottom: 4rem;
+}
+
+/* Typing caret effect */
+.typing {
+    position: relative;
+}
+
+.typing::after {
+    content: "";
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background: #ffffff;
+    margin-left: 4px;
+    animation: caret-blink 1s steps(1, end) infinite;
+    vertical-align: -0.15em;
+}
+
+@keyframes caret-blink {
+    0%, 50% { opacity: 1; }
+    50.01%, 100% { opacity: 0; }
+}
+
+/* Cinematic reveal base styles */
+.reveal {
+    opacity: 0;
+    transform: translateY(24px) scale(0.98);
+    transition: opacity 600ms ease, transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+}
+
+.reveal.in-view {
+    opacity: 1;
+    transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        transition: none;
+        transform: none;
+        opacity: 1;
+    }
+}
+
+.tech-slider {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    padding: 1rem;
+    touch-action: pan-x;
+}
+
+.tech-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.tech-card {
+    flex: 0 0 auto;
+    min-width: 280px;
+    padding: 2rem;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+/* Tech Card Content */
+.tech-number {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    color: #ffffff;
+    font-size: 0.8rem;
+    opacity: 0.5;
+}
+
+.tech-icon {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin: 2rem 0;
+    filter: grayscale(100%) brightness(150%);
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.tech-card:hover .tech-icon {
+    filter: grayscale(0%) brightness(100%);
+    opacity: 1;
+}
+
+.tech-name {
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+    .tech-card {
+        min-width: 160px;
+        padding: 1.5rem;
+    }
+    
+    .tech-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .section-headline {
+        font-size: 2.5rem;
+        min-height: calc(2.5rem * 1.2 * 2);
+    }
+}
+
+/* Courses Section */
+.courses-section {
+    padding: 6rem 0;
+}
+
+.courses-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.courses-grid {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+/* Responsive: switch to 1 column at 500px */
+@media (max-width: 500px) {
+    .courses-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.course-card {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 0;
+    height: 200px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.course-icon {
+    height: 100%;
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.course-icon img {
+    width: 100%;
+    height: auto;
+    max-height: 120px;  /* increased from previous value */
+    object-fit: contain;
+    filter: brightness(1);  /* removed dimming effect */
+}
+
+.course-info {
+    flex: 1;
+}
+
+.course-info h3 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: 0 0 0.5rem 0;
+}
+
+.course-info p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1rem;
+    margin: 0 0 1rem 0;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.25rem 1rem;
+    border-radius: 100px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.badge.completed {
+    background: rgba(0, 255, 0, 0.1);
+    color: #4caf50;
+}
+
+.badge.ongoing {
+    background: rgba(255, 193, 7, 0.1);
+    color: #ffc107;
+}
+
+@media (max-width: 768px) {
+    .course-card {
+        padding: 1rem;
+        height: auto;
+        flex-direction: row;
+        text-align: left;
+        gap: 1rem;
+    }
+
+    .course-icon {
+        height: 100%;
+        width: 35%;
+        flex-shrink: 0;
+    }
+    
+    .course-icon img {
+        max-height: 80px;
+    }
+
+    .course-info h3 {
+        font-size: 1rem;
+    }
+    
+    .course-info p {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .course-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .course-icon {
+        width: 100%;
+        height: 80px;
+    }
+}
+
+/* Centered images in feature boxes */
+.feature-graphic {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.feature-image {
+    width: 70%;
+    height: auto;
+    object-fit: contain;
+    filter: brightness(0.9);
+}
+
+/* Floating animation for 1st and 3rd feature images */
+.feature-graphic:nth-child(2) .feature-image,
+.feature-graphic:nth-child(6) .feature-image {
+    animation: float-gentle 4s ease-in-out infinite;
+}
+
+/* Spinning animation for atom image */
+.feature-graphic:nth-child(4) .feature-image,
+.feature-graphic img[src="/Img/atom.png"] {
+    animation: spin 50s linear infinite;
+    transform-origin: center center;
+}
+
+/* Keyframes for floating animation */
+@keyframes float-gentle {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Keyframes for spinning animation */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Energy wave animations for project cards */
+@keyframes energy-pulse {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+}
+
+@keyframes energy-wave-spread {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    100% {
+        width: 300%;
+        height: 300%;
+        opacity: 0;
+    }
+}
+
+@keyframes grid-energy-wave {
+    0% {
+        background-position: 0 0;
+        filter: brightness(1);
+    }
+    50% {
+        filter: brightness(1.15);
+    }
+    100% {
+        background-position: 10px 10px;
+        filter: brightness(1);
+    }
+}
+
+/* Education Section */
+.education-section {
+    padding: 6rem 0;
+}
+
+.education-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.education-timeline {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem 2rem;
+    margin-top: 2rem;
+    align-items: start;
+}
+
+/* Center vertical line - hidden for cleaner look */
+.timeline-line {
+    display: none;
+}
+
+/* Card container per item */
+.education-card {
+    position: relative;
+    min-height: 200px;
+}
+
+/* Position left/right of center line */
+.education-card:nth-child(odd) {
+    grid-column: 1;
+    padding-right: 1rem;
+}
+.education-card:nth-child(even) {
+    grid-column: 2;
+    padding-left: 1rem;
+}
+
+/* Connector from card to center line - hidden for cleaner look */
+.education-card::before {
+    display: none;
+}
+
+/* Year label - positioned above card for visibility */
+.education-year {
+    position: relative;
+    display: inline-block;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.9);
+    letter-spacing: 0.08em;
+    padding: 0.35rem 0.75rem;
+    background: rgba(10,10,10,0.8);
+    border: 1px solid rgba(255,255,255,0.15);
+    backdrop-filter: blur(4px);
+    white-space: nowrap;
+    margin-bottom: 1rem;
+    width: fit-content;
+}
+
+/* Card inner box */
+.education-card-inner {
+    display: grid;
+    grid-template-columns: 200px 1fr; /* widen media column */
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.02);
+    align-items: stretch;
+}
+
+/* Media with subtle grid background */
+.education-media {
+    position: relative;
+    min-height: 190px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+    background-size: 10px 10px;
+    overflow: hidden;
+}
+
+.education-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.95);
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+/* Fallback initial if no image is given */
+.education-media-fallback {
+    font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 600;
+    font-size: 2.2rem;
+    color: rgba(255,255,255,0.9);
+}
+
+/* Text content */
+.education-content {
+    padding: 1.25rem 1.5rem;
+    border-left: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    flex-direction: column;
+}
+
+.education-title {
+    margin: 0 0 0.25rem 0;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.education-program {
+    margin: 0 0 0.25rem 0;
+    color: rgba(255,255,255,0.85);
+    font-size: 0.95rem;
+    font-family: var(--hero-paragraph-font);
+    font-weight: 300;
+}
+
+.education-location {
+    margin: 0;
+    margin-top: auto; /* stick to bottom */
+    color: rgba(255,255,255,0.7);
+    font-size: 0.9rem;
+    font-family: var(--hero-paragraph-font);
+    font-weight: 300;
+}
+
+/* Responsive - single column layout */
+@media (max-width: 880px) {
+    .education-timeline { 
+        grid-template-columns: 1fr; 
+        gap: 2.5rem; 
+    }
+    
+    .education-card,
+    .education-card:nth-child(odd),
+    .education-card:nth-child(even) {
+        grid-column: 1;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    .education-year {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 1rem;
+        left: auto;
+        right: auto;
+        transform: none;
+    }
+    
+    .education-card-inner { 
+        grid-template-columns: 140px 1fr; 
+    }
+    
+    .education-media { 
+        min-height: 180px; 
+    }
+}
+
+/* Projects Section */
+.projects-section {
+    padding: 4rem 0;
+    display: block;
+}
+
+.projects-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.projects-box {
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 0;
+    overflow: hidden;
+    margin-top: 2rem;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 0;
+    align-items: stretch;
+}
+
+.project-header {
+    grid-column: 1 / -1;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    text-align: left;
+}
+
+.project-card {
+    padding: 0;
+    position: relative;
+    border-right: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 400px;
+    align-self: stretch;
+    transition: border-color 400ms ease;
+    overflow: hidden;
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(100, 200, 255, 0.08) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 600ms ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.project-card:hover::before {
+    opacity: 1;
+    animation: energy-pulse 1.5s ease-out;
+}
+
+.project-card:hover {
+    border-color: rgba(100, 200, 255, 0.15);
+}
+
+.project-card:nth-child(3) {
+    border-right: 1px solid rgba(255,255,255,0.08);
+}
+
+.project-card:nth-child(4) {
+    border-right: none;
+}
+
+.project-card:last-child,
+.project-card:nth-last-child(2) {
+    border-bottom: none;
+}
+
+.project-media {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    min-height: 200px;
+    overflow: hidden;
+    position: relative;
+    background-image: 
+        linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 10px 10px;
+    transition: background-image 400ms ease;
+}
+
+.project-card:hover .project-media {
+    background-image: 
+        linear-gradient(rgba(100, 200, 255, 0.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(100, 200, 255, 0.12) 1px, transparent 1px);
+    animation: grid-energy-wave 1.2s ease-out;
+}
+
+.project-media::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(100, 200, 255, 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.project-card:hover .project-media::after {
+    animation: energy-wave-spread 1s ease-out;
+}
+
+.project-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    filter: brightness(0.9);
+    transition: filter 400ms ease, transform 400ms ease;
+    z-index: 2;
+}
+
+.project-card:hover .project-image {
+    filter: brightness(1.05) drop-shadow(0 0 15px rgba(100, 200, 255, 0.3));
+    transform: translate(-50%, -50%) scale(1.01);
+}
+
+.project-caption-content {
+    padding: 1.5rem 2rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    transition: border-color 400ms ease, background-color 400ms ease;
+    position: relative;
+    z-index: 2;
+}
+
+.project-card:hover .project-caption-content {
+    border-top-color: rgba(100, 200, 255, 0.12);
+    background-color: rgba(100, 200, 255, 0.02);
+}
+
+.project-caption {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #ffffff;
+    margin: 0 0 0.75rem 0;
+    text-align: left;
+}
+
+.project-subtitle {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    line-height: 1.5;
+    text-align: left;
+}
+
+/* Responsive Design for Projects Section */
+@media (max-width: 880px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+    }
+
+    .project-header {
+        grid-column: 1;
+    }
+
+    .project-card {
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .project-card:last-child {
+        border-bottom: none;
+    }
+}
+
+/* Footer */
+.footer {
+    background-color: #0a0a0a;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 3rem 0 1rem 0;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.footer-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 3rem;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-left {
+    text-align: left;
+}
+
+.footer-right {
+    text-align: right;
+}
+
+.footer-heading {
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.footer-left .footer-links {
+    justify-content: flex-start;
+}
+
+.footer-right .footer-links {
+    justify-content: flex-end;
+}
+
+.footer-link {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #ffffff;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-copyright {
+    color: #ffffff;
+    font-size: 200px;
+    font-weight: 100;
+    margin: 0;
+    letter-spacing: 13px;
+    line-height: 1;
+    height: auto;
+}
+
+/* Footer big text bottom-up animation */
+.footer-big {
+    opacity: 0;
+    transform: translateY(120px);
+    filter: blur(6px);
+    transition:
+        opacity 1200ms ease,
+        transform 1400ms cubic-bezier(0.22, 1, 0.36, 1),
+        filter 1000ms ease;
+    transition-delay: 250ms;
+    will-change: opacity, transform, filter;
+}
+
+.footer-big.footer-big-in {
+    opacity: 1;
+    transform: translateY(0);
+    filter: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .footer-big {
+        opacity: 1;
+        transform: none;
+        filter: none;
+        transition: none;
+    }
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .footer-top {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: left;
+    }
+    
+    .footer-left,
+    .footer-right {
+        text-align: left;
+    }
+    
+    .footer-heading {
+        text-align: left;
+    }
+    
+    .footer-left .footer-links,
+    .footer-right .footer-links {
+        justify-content: flex-start;
+    }
+    
+    .footer-copyright {
+        font-size: 2rem;
+    }
+}
