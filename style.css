@@ -637,11 +637,11 @@ p {
 }
 
 .burger-menu.active .burger-line:first-child {
-    transform: rotate(45deg) translate(6px, 6px);
+    transform: translateY(3.5px) rotate(45deg);
 }
 
 .burger-menu.active .burger-line:last-child {
-    transform: rotate(-45deg) translate(5px, -5px);
+    transform: translateY(-3.5px) rotate(-45deg);
 }
 
 @media (min-width: 769px) {
