@@ -2014,21 +2014,32 @@ p {
 }
 
 .education-container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 0 2rem;
 }
 
 .education-timeline {
     position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2.5rem 2rem;
-    margin-top: 2rem;
-    align-items: start;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-top: 3rem;
+    padding-left: 2.5rem;
 }
 
-/* Center vertical line - hidden for cleaner look */
+/* Vertical Timeline Line running top to bottom */
+.education-timeline::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.15) 100%);
+    z-index: 1;
+}
+
 .timeline-line {
     display: none;
 }
@@ -2036,25 +2047,59 @@ p {
 /* Card container per item */
 .education-card {
     position: relative;
-    min-height: 200px;
+    width: 100%;
+    transition: transform 0.3s ease;
 }
 
-/* Position left/right of center line */
-.education-card:nth-child(odd) {
-    grid-column: 1;
-    padding-right: 1rem;
-}
+.education-card:nth-child(odd),
 .education-card:nth-child(even) {
-    grid-column: 2;
-    padding-left: 1rem;
+    grid-column: auto;
+    padding-left: 0;
+    padding-right: 0;
 }
 
-/* Connector from card to center line - hidden for cleaner look */
+/* Timeline Node / Dot on the line */
 .education-card::before {
-    display: none;
+    content: '';
+    display: block;
+    position: absolute;
+    left: calc(-2.5rem + 1px);
+    top: 6px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #0a0a0a;
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    z-index: 2;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Year label - positioned above card for visibility */
+.education-card:hover::before {
+    background: #ffffff;
+    box-shadow: 0 0 18px rgba(255, 255, 255, 0.95);
+    transform: scale(1.3);
+}
+
+/* Connector line from node to card */
+.education-card::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: calc(-2.5rem + 14px);
+    top: 12px;
+    width: calc(2.5rem - 14px);
+    height: 1px;
+    background: rgba(255, 255, 255, 0.25);
+    z-index: 1;
+    transition: background 0.3s ease;
+}
+
+.education-card:hover::after {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+/* Year label */
 .education-year {
     position: relative;
     display: inline-block;
@@ -2062,27 +2107,34 @@ p {
     color: rgba(255,255,255,0.9);
     letter-spacing: 0.08em;
     padding: 0.35rem 0.75rem;
-    background: rgba(10,10,10,0.8);
-    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(10,10,10,0.9);
+    border: 1px solid rgba(255,255,255,0.2);
     backdrop-filter: blur(4px);
     white-space: nowrap;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
     width: fit-content;
 }
 
 /* Card inner box */
 .education-card-inner {
     display: grid;
-    grid-template-columns: 200px 1fr; /* widen media column */
+    grid-template-columns: 240px 1fr;
     border: 1px solid rgba(255,255,255,0.08);
     background: rgba(255,255,255,0.02);
     align-items: stretch;
+    transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Media with subtle grid background */
+.education-card:hover .education-card-inner {
+    border-color: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.04);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Media styling */
 .education-media {
     position: relative;
-    min-height: 190px;
+    min-height: 180px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2096,10 +2148,16 @@ p {
 .education-image {
     width: 100%;
     height: 100%;
-    object-fit: fill;
+    object-fit: cover;
     filter: brightness(0.95);
+    transition: filter 0.3s ease, transform 0.3s ease;
     -webkit-user-drag: none;
     user-select: none;
+}
+
+.education-card:hover .education-image {
+    filter: brightness(1.05);
+    transform: scale(1.02);
 }
 
 /* Fallback initial if no image is given */
@@ -2112,58 +2170,51 @@ p {
 
 /* Text content */
 .education-content {
-    padding: 1.25rem 1.5rem;
+    padding: 1.5rem 1.75rem;
     border-left: 1px solid rgba(255,255,255,0.08);
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .education-title {
-    margin: 0 0 0.25rem 0;
+    margin: 0 0 0.4rem 0;
     color: #ffffff;
     font-weight: 500;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
 }
 
 .education-program {
-    margin: 0 0 0.25rem 0;
+    margin: 0 0 0.4rem 0;
     color: rgba(255,255,255,0.85);
-    font-size: 0.95rem;
+    font-size: 0.98rem;
     font-family: var(--hero-paragraph-font);
     font-weight: 300;
 }
 
 .education-location {
     margin: 0;
-    margin-top: auto; /* stick to bottom */
-    color: rgba(255,255,255,0.7);
+    margin-top: 0.5rem;
+    color: rgba(255,255,255,0.65);
     font-size: 0.9rem;
     font-family: var(--hero-paragraph-font);
     font-weight: 300;
 }
 
-/* Responsive - single column layout */
+/* Responsive - mobile timeline layout */
 @media (max-width: 880px) {
     .education-timeline { 
-        grid-template-columns: 1fr; 
+        padding-left: 1.75rem;
         gap: 2.5rem; 
     }
-    
-    .education-card,
-    .education-card:nth-child(odd),
-    .education-card:nth-child(even) {
-        grid-column: 1;
-        padding-left: 0;
-        padding-right: 0;
+
+    .education-card::before {
+        left: calc(-1.75rem + 1px);
     }
-    
-    .education-year {
-        position: relative;
-        display: inline-block;
-        margin-bottom: 1rem;
-        left: auto;
-        right: auto;
-        transform: none;
+
+    .education-card::after {
+        left: calc(-1.75rem + 14px);
+        width: calc(1.75rem - 14px);
     }
     
     .education-card-inner { 
@@ -2171,7 +2222,7 @@ p {
     }
     
     .education-media { 
-        min-height: 180px; 
+        min-height: 160px; 
     }
 }
 
