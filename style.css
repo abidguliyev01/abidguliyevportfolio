@@ -2119,7 +2119,7 @@ p {
 .education-card-inner {
     display: grid;
     grid-template-columns: 240px 1fr;
-    height: 190px;
+    min-height: 190px;
     border: 1px solid rgba(255,255,255,0.08);
     background: rgba(255,255,255,0.02);
     align-items: stretch;
