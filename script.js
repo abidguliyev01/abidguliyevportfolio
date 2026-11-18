@@ -175,6 +175,7 @@ function setupRevealOnView() {
         '.course-card',
         '.project-card',
         '.education-card',
+        '.hackathon-card',
     ];
 
     const targets = selectors.flatMap(sel => Array.from(document.querySelectorAll(sel)));
