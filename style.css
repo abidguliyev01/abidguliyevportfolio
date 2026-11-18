@@ -2271,10 +2271,11 @@ p {
 .hackathon-card {
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 2rem 2.25rem;
+    padding: 1.5rem 1.75rem;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
     position: relative;
     transition: border-color 0.4s ease, background-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
     overflow: hidden;
@@ -2312,20 +2313,66 @@ p {
     grid-column: 1 / -1;
     background: linear-gradient(135deg, rgba(100, 200, 255, 0.04) 0%, rgba(255, 255, 255, 0.02) 100%);
     border-color: rgba(100, 200, 255, 0.2);
+    gap: 2.25rem;
+    padding: 2rem 2.25rem;
+}
+
+.hackathon-map-box {
+    width: 140px;
+    min-width: 140px;
+    height: 140px;
+    background: #121212;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+    position: relative;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+.hackathon-card.featured .hackathon-map-box {
+    width: 180px;
+    min-width: 180px;
+    height: 180px;
+}
+
+.hackathon-map-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: brightness(0.95);
+    transition: transform 0.4s ease, filter 0.4s ease;
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+.hackathon-card:hover .hackathon-map-img {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+.hackathon-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
 }
 
 .hackathon-card-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.25rem;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
     flex-wrap: wrap;
 }
 
 .hackathon-tag {
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
     color: rgba(100, 200, 255, 0.95);
     font-family: var(--hero-paragraph-font);
     font-weight: 600;
@@ -2333,10 +2380,10 @@ p {
 }
 
 .hackathon-date {
-    font-size: 0.85rem;
+    font-size: 0.78rem;
     color: rgba(255, 255, 255, 0.9);
-    letter-spacing: 0.05em;
-    padding: 0.35rem 0.75rem;
+    letter-spacing: 0.04em;
+    padding: 0.2rem 0.55rem;
     background: rgba(10, 10, 10, 0.85);
     border: 1px solid rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(4px);
@@ -2347,38 +2394,38 @@ p {
 
 .hackathon-name {
     color: #ffffff;
-    font-size: 1.35rem;
+    font-size: 1.25rem;
     font-weight: 500;
-    margin: 0 0 0.5rem 0;
+    margin: 0 0 0.35rem 0;
     letter-spacing: 0.5px;
 }
 
 .hackathon-card.featured .hackathon-name {
-    font-size: 1.55rem;
+    font-size: 1.5rem;
 }
 
 .hackathon-location {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.45rem;
     color: rgba(255, 255, 255, 0.7);
-    font-size: 0.95rem;
-    margin: 0 0 0.85rem 0;
+    font-size: 0.9rem;
+    margin: 0 0 0.65rem 0;
     font-family: var(--hero-paragraph-font);
     font-weight: 300;
 }
 
 .location-icon {
-    width: 15px;
-    height: 15px;
+    width: 14px;
+    height: 14px;
     stroke: rgba(100, 200, 255, 0.9);
     flex-shrink: 0;
 }
 
 .hackathon-description {
     color: rgba(255, 255, 255, 0.8);
-    font-size: 0.92rem;
-    line-height: 1.6;
+    font-size: 0.88rem;
+    line-height: 1.55;
     margin: 0;
     font-family: var(--hero-paragraph-font);
     font-weight: 300;
@@ -2394,15 +2441,27 @@ p {
     }
     .hackathon-card.featured {
         grid-column: 1;
+        gap: 1.5rem;
     }
-    .hackathon-card {
-        padding: 1.5rem;
+}
+
+@media (max-width: 580px) {
+    .hackathon-card,
+    .hackathon-card.featured {
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+        padding: 1.25rem;
+        gap: 1.25rem;
     }
-    .hackathon-name {
-        font-size: 1.2rem;
+    .hackathon-map-box,
+    .hackathon-card.featured .hackathon-map-box {
+        width: 100%;
+        max-width: 220px;
+        height: 160px;
     }
-    .hackathon-card.featured .hackathon-name {
-        font-size: 1.3rem;
+    .hackathon-content {
+        width: 100%;
     }
 }
 
