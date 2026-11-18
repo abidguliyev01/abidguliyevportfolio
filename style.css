@@ -250,7 +250,7 @@ section {
 /* Profile Image */
 .profile-image-container {
     width: 100%;
-    max-width: 500px;
+    max-width: 440px;
     margin-bottom: 1rem;
     margin-left: 0;
     margin-right: auto;
@@ -260,9 +260,9 @@ section {
 
 .profile-image {
     width: 100%;
-    max-width: 700px;
+    max-width: 440px;
     height: auto;
-    aspect-ratio: 5/6;
+    aspect-ratio: 576 / 800;
     object-fit: cover;
     object-position: center top;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
@@ -280,24 +280,27 @@ section {
 /* Responsive profile image */
 @media (max-width: 768px) {
     .profile-image-container {
-        max-width: 300px;
+        max-width: 320px;
         margin: 0 auto 1rem auto;
         justify-content: center;
     }
     
     .profile-image {
-        max-width: 300px;
-        aspect-ratio: 1/1;
+        max-width: 320px;
+        height: auto;
+        aspect-ratio: 576 / 800;
     }
 }
 
 @media (max-width: 480px) {
     .profile-image-container {
-        max-width: 250px;
+        max-width: 270px;
     }
     
     .profile-image {
-        max-width: 250px;
+        max-width: 270px;
+        height: auto;
+        aspect-ratio: 576 / 800;
     }
 }
 
@@ -928,14 +931,15 @@ p {
     }
     
     .profile-image-container {
-        width: 250px;
-        height: 250px;
+        width: 260px;
+        height: auto;
         flex-shrink: 0;
     }
     
     .profile-image {
         width: 100%;
-        height: 100%;
+        height: auto;
+        aspect-ratio: 576 / 800;
     }
     
     /* Features/About section - keep 2 columns but smaller */
@@ -1182,8 +1186,8 @@ p {
     }
     
     .profile-image-container {
-        width: 220px;
-        height: 220px;
+        width: 240px;
+        height: auto;
     }
     
     /* Features section - maintain 2 columns but tighter */
@@ -1385,8 +1389,8 @@ p {
     }
     
     .profile-image-container {
-        width: 200px;
-        height: 200px;
+        width: 210px;
+        height: auto;
     }
     
     .btn-primary {
